@@ -4,10 +4,10 @@ Build window: 18–28 Nov 2026. Polish + demo video: 29 Nov–3 Dec. Submission:
 
 ## Tasks
 
-- [ ] 1. Scaffold the project
-  - [ ] 1.1 Initialise Vite + TypeScript static app with a PWA manifest and a hand-written cache-first service worker
-  - [ ] 1.2 Set up Vitest and the test script (`npm test`)
-  - [ ] 1.3 Add the app shell: single-column layout, 44px tap targets, black + warm accent theme
+- [x] 1. Scaffold the project
+  - [x] 1.1 Initialise Vite + TypeScript static app with a PWA manifest and a hand-written cache-first service worker
+  - [x] 1.2 Set up Vitest and the test script (`npm test`)
+  - [x] 1.3 Add the app shell: single-column layout, 44px tap targets, black + warm accent theme
   - _Requirements: 4.1, 6.1, 6.3_
 
 - [ ] 2. Build the domain layer
