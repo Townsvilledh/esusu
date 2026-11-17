@@ -1,0 +1,15 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+
+# Kiro specs are part of the repo — NEVER ignore .kiro
+!.kiro/
+!.kiro/**
