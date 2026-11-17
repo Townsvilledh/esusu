@@ -10,11 +10,11 @@ Build window: 18–28 Nov 2026. Polish + demo video: 29 Nov–3 Dec. Submission:
   - [x] 1.3 Add the app shell: single-column layout, 44px tap targets, black + warm accent theme
   - _Requirements: 4.1, 6.1, 6.3_
 
-- [ ] 2. Build the domain layer
-  - [ ] 2.1 Implement the data model and `createCircle` with validation (≥2 members, amount > 0, non-empty name)
-  - [ ] 2.2 Implement `markPaid` / undo and `closeRound` with round advancement and shortfall recording
-  - [ ] 2.3 Implement `potFor` and payout-order derivation
-  - [ ] 2.4 Write unit tests for the domain: create/validate, mark-paid, close-round, payout order, shortfall
+- [x] 2. Build the domain layer
+  - [x] 2.1 Implement the data model and `createCircle` with validation (≥2 members, amount > 0, non-empty name)
+  - [x] 2.2 Implement `markPaid` / undo and `closeRound` with round advancement and shortfall recording
+  - [x] 2.3 Implement `potFor` and payout-order derivation
+  - [x] 2.4 Write unit tests for the domain: create/validate, mark-paid, close-round, payout order, shortfall
   - _Requirements: 1.1, 1.2, 1.4, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4_
 
 - [ ] 3. Build local storage
