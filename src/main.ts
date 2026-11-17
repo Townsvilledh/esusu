@@ -1,8 +1,11 @@
 import "./style.css";
 import { initStore, persistent } from "./store";
+import { renderCircleDetail } from "./views/detail";
+import { renderCircleForm } from "./views/form";
+import { renderCircleList } from "./views/list";
+import { renderShareView, renderSharedCircle } from "./views/shareView";
 
-// App entry point. The router and views are wired in task group 4; this
-// bootstrap owns the shell, the storage banner, and the offline worker.
+// App entry point: shell, storage banner, offline worker, hash router.
 const app = document.getElementById("app");
 
 if (app) {
@@ -33,6 +36,53 @@ initStore().then(() => {
     `;
   }
 });
+
+// Hash-based routing (task 4.5), so the app works from any static host:
+//   #/              circle list
+//   #/new           create form
+//   #/circle/:id    circle detail
+//   #/share/:id     share one of your circles
+//   #c=<payload>    a shared circle arriving by link
+async function route(): Promise<void> {
+  const view = document.getElementById("view");
+  if (!view) return;
+  const hash = window.location.hash;
+
+  if (hash.startsWith("#c=")) {
+    await renderSharedCircle(view, window.location.href);
+    return;
+  }
+
+  const path = hash.replace(/^#/, "") || "/";
+  if (path === "/") {
+    await renderCircleList(view);
+    return;
+  }
+  if (path === "/new") {
+    renderCircleForm(view);
+    return;
+  }
+  const circleMatch = path.match(/^\/circle\/(.+)$/);
+  if (circleMatch) {
+    await renderCircleDetail(view, decodeURIComponent(circleMatch[1]));
+    return;
+  }
+  const shareMatch = path.match(/^\/share\/(.+)$/);
+  if (shareMatch) {
+    await renderShareView(view, decodeURIComponent(shareMatch[1]));
+    return;
+  }
+
+  view.innerHTML = `
+    <h1>Page not found</h1>
+    <p><a class="btn block" href="#/">Go to your circles</a></p>
+  `;
+}
+
+window.addEventListener("hashchange", () => {
+  void route();
+});
+void route();
 
 // Cache-first service worker: after the first visit the whole app loads
 // with no network at all (Requirement 4.1).

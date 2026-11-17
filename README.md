@@ -11,9 +11,22 @@ A savings circle is simple: a group of people agree a fixed contribution and a f
 - **No accounts, no KYC, no server.** There is nothing to sign up for and no one to hand identity documents to.
 - **Shareable by link.** A circle can be shared as a link that carries its (public) state — members open it and see the same circle, no backend involved.
 
+## Live demo
+
+**https://townsvilledh.github.io/esusu/** — installable PWA; after the first visit it works fully offline.
+
+## Run it locally
+
+```bash
+npm install
+npm run dev     # development server
+npm test        # unit tests (domain + share codec)
+npm run build   # static build into dist/
+```
+
 ## Status
 
-Built with [Kiro](https://kiro.dev) for **Kiroween 2026** (Costume Contest category). Specs live in [`.kiro/specs/esusu`](.kiro/specs/esusu) — requirements, design, and tasks. Build window: 18–28 Nov 2026.
+Built with [Kiro](https://kiro.dev) for **Kiroween 2026** (Costume Contest category). Specs live in [`.kiro/specs/esusu`](.kiro/specs/esusu) — requirements, design, and tasks. The app is feature-complete per the specs (circles, contributions, rounds with shortfall recording, share-by-link, multi-currency); what remains is the demo video and the Devpost submission (deadline 4 Dec 2026).
 
 ## Licence
 
