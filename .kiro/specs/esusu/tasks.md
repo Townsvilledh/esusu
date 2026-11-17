@@ -32,11 +32,11 @@ Build window: 18–28 Nov 2026. Polish + demo video: 29 Nov–3 Dec. Submission:
   - _Requirements: 3.1, 3.3, 6.2, 6.4, 7.1, 7.3, 7.4_
 
 - [ ] 5. Build share-by-link
-  - [ ] 5.1 Implement the share codec: versioned JSON → base64url → `#c=` URL hash, with decode validation
+  - [x] 5.1 Implement the share codec: versioned JSON → base64url → `#c=` URL hash, with decode validation
   - [ ] 5.2 Share view: copy link button, Web Share API with clipboard fallback
   - [ ] 5.3 Opening a share link shows the circle and offers "save a local copy"; a saved copy is independent afterwards
   - [ ] 5.4 Damaged or truncated links show a plain-language error, never a wrong circle
-  - [ ] 5.5 Write unit tests for the codec: round-trip, damaged payload, version mismatch
+  - [x] 5.5 Write unit tests for the codec: round-trip, damaged payload, version mismatch
   - _Requirements: 5.1, 5.2, 5.3, 5.4_
 
 - [ ] 6. Currencies and multi-circle handling
