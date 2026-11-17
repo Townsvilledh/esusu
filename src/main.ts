@@ -1,7 +1,8 @@
 import "./style.css";
+import { initStore, persistent } from "./store";
 
-// App entry point. The router and views live in main's later task groups;
-// this shell proves the scaffold: layout, theme, and the offline worker.
+// App entry point. The router and views are wired in task group 4; this
+// bootstrap owns the shell, the storage banner, and the offline worker.
 const app = document.getElementById("app");
 
 if (app) {
@@ -10,6 +11,7 @@ if (app) {
       <a class="brand" href="#/">Esusu</a>
       <span class="tagline">circle savings, on your phone</span>
     </header>
+    <div id="storage-banner"></div>
     <main id="view">
       <div class="empty">
         <p>Loading your circles…</p>
@@ -17,6 +19,20 @@ if (app) {
     </main>
   `;
 }
+
+// Probe storage once at startup. If this device cannot save (Requirement
+// 4.4), say so plainly and keep the session running in memory.
+initStore().then(() => {
+  const banner = document.getElementById("storage-banner");
+  if (banner && !persistent) {
+    banner.innerHTML = `
+      <div class="banner warn" role="alert">
+        This device can't save circles — anything you enter now will be gone
+        when you close the app. Try a regular (non-private) browser window.
+      </div>
+    `;
+  }
+});
 
 // Cache-first service worker: after the first visit the whole app loads
 // with no network at all (Requirement 4.1).

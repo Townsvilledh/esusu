@@ -17,10 +17,10 @@ Build window: 18–28 Nov 2026. Polish + demo video: 29 Nov–3 Dec. Submission:
   - [x] 2.4 Write unit tests for the domain: create/validate, mark-paid, close-round, payout order, shortfall
   - _Requirements: 1.1, 1.2, 1.4, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 3.4_
 
-- [ ] 3. Build local storage
-  - [ ] 3.1 Implement the IndexedDB store (`listCircles`, `getCircle`, `saveCircle`, `deleteCircle`)
-  - [ ] 3.2 Show a plain-language banner when IndexedDB is unavailable; run the session read-only in memory
-  - [ ] 3.3 Persist every mutation locally before confirming success to the user
+- [x] 3. Build local storage
+  - [x] 3.1 Implement the IndexedDB store (`listCircles`, `getCircle`, `saveCircle`, `deleteCircle`)
+  - [x] 3.2 Show a plain-language banner when IndexedDB is unavailable; run the session read-only in memory
+  - [x] 3.3 Persist every mutation locally before confirming success to the user
   - _Requirements: 1.3, 4.1, 4.2, 4.3, 4.4_
 
 - [ ] 4. Build the views
